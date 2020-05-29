@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.mrl.icontrol.MainActivity">
+
+    <com.mrl.customfont.EditText__SF_Pro_Display_Medium
+        android:id="@+id/etTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/rect_dark_bottom_rect"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:hint="input title"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
+        android:textSize="12sp" />
+
+    <com.mrl.customfont.EditText__SF_Pro_Display_Medium
+        android:id="@+id/etContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/rect_dark_top_rect"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="13dp"
+        android:paddingRight="13dp"
+        android:paddingBottom="14dp"
+        android:hint="input content"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <Button
+            android:id="@+id/connect_server"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/rect_dark_right_rect"
+            android:text="connect"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/send_to_server"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/rect_dark_left_rect"
+            android:text="send"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scroll_master"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rect_dark">
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tvRes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:textColor="@color/white"/>
+        </HorizontalScrollView>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rect_dark"
+        android:orientation="vertical">
+
+        <com.mrl.customfont.EditText__SF_Pro_Display_Medium
+            android:id="@+id/activity1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="41dp"
+            android:layout_marginTop="41dp"
+            android:layout_marginRight="41dp"
+            android:background="@drawable/rect"
+            android:editable="false"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            android:text="语音识别测试"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff"
+            android:textSize="12sp" />
+
+        <com.mrl.customfont.EditText__SF_Pro_Display_Medium
+            android:id="@+id/activity2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="41dp"
+            android:layout_marginTop="21dp"
+            android:layout_marginRight="41dp"
+            android:background="@drawable/rect"
+            android:editable="false"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:paddingTop="13dp"
+            android:paddingRight="13dp"
+            android:paddingBottom="14dp"
+            android:text="语义分析测试"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff"
+            android:textSize="12sp" />
+
+        <com.mrl.customfont.EditText__SF_Pro_Display_Medium
+            android:id="@+id/activity3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="41dp"
+            android:layout_marginTop="21dp"
+            android:layout_marginRight="41dp"
+            android:background="@drawable/rect"
+            android:editable="false"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:paddingTop="13dp"
+            android:paddingRight="13dp"
+            android:paddingBottom="14dp"
+            android:text="语音唤醒测试"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/start_speech"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="41dp"
+                android:layout_marginTop="21dp"
+                android:layout_marginRight="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/rect_dark_right_rect"
+                android:paddingLeft="20dp"
+                android:paddingTop="13dp"
+                android:paddingRight="13dp"
+                android:paddingBottom="14dp"
+                android:text="开始讲话"
+                android:textColor="@color/white" />\
+
+            <Button
+                android:id="@+id/stop_speech"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="21dp"
+                android:layout_marginRight="41dp"
+                android:layout_weight="1"
+                android:background="@drawable/rect_dark_left_rect"
+                android:paddingLeft="20dp"
+                android:paddingTop="13dp"
+                android:paddingRight="13dp"
+                android:paddingBottom="14dp"
+                android:text="停止讲话"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
