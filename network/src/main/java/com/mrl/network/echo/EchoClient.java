@@ -50,6 +50,10 @@ public class EchoClient {
         return INSTANCE;
     }
 
+    public static void destroy(){
+        INSTANCE = null;
+    }
+
     public void connect(String host, int port, OnServerConnectListener onServerConnectListener) {
         if (mChannel != null && mChannel.isActive()) {
             return;

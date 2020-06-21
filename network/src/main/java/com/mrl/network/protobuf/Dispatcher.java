@@ -1,6 +1,6 @@
 package com.mrl.network.protobuf;
 
-import android.support.v4.util.ArrayMap;
+import android.util.ArrayMap;
 
 import com.mrl.network.business.OnReceiveListener;
 

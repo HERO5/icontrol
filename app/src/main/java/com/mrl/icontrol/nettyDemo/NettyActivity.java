@@ -1,9 +1,8 @@
-package com.mrl.icontrol;
+package com.mrl.icontrol.nettyDemo;
 
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,14 +10,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.mrl.icontrol.R;
 import com.mrl.network.protobuf.NettyClient;
 import com.mrl.network.protobuf.NettyServer;
 import com.mrl.network.protobuf.Test;
 import com.mrl.network.business.OnReceiveListener;
 import com.mrl.network.business.OnServerConnectListener;
 import com.mrl.icontrol.service.ServerService;
-
-import java.net.InetSocketAddress;
 
 public class NettyActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";

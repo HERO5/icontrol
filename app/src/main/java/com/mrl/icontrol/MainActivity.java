@@ -4,12 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.mrl.ai.baidu.asr.business.RecogListener;
 import com.mrl.ai.baidu.asr.mini.MiniRecog;
@@ -17,7 +18,6 @@ import com.mrl.icontrol.baiduDemo.mini.ActivityMyMiniRecog;
 import com.mrl.icontrol.baiduDemo.mini.ActivityMyMiniUnit;
 import com.mrl.icontrol.baiduDemo.mini.ActivityMyMiniWakeUp;
 import com.mrl.icontrol.cmd.CmdParser;
-import com.mrl.icontrol.service.ServerService;
 import com.mrl.icontrol.util.JsonUtil;
 import com.mrl.network.business.OnReceiveListener;
 import com.mrl.network.business.OnServerConnectListener;
@@ -64,7 +64,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     keyword = keyword.replace(String.valueOf(keyword.charAt(keyword.length()-1)), "");
                     etTitle.setText(keyword);
                     Integer cmd = CmdParser.parse(keyword);
-                    etContent.setText(String.valueOf(cmd));
+                    if(cmd==CmdParser.NONE){
+                        etContent.setText(keyword);
+                    }else {
+                        etContent.setText(String.valueOf(cmd));
+                    }
+                    send();
                 }
             }
             @Override
@@ -72,8 +77,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
         miniRecog.onCreate();
 
-        Intent intent = new Intent(this, ServerService.class);
-        startService(intent);
+//        Intent intent = new Intent(this, ServerService.class);
+//        startService(intent);
 
         initView();
     }
@@ -150,7 +155,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 }
                             }
                         })
-                        .connect("192.168.43.115", 80, new OnServerConnectListener() {
+                        .connect("192.168.43.192", 9999, new OnServerConnectListener() {
                             @Override
                             public void onConnectSuccess() {
                                 new Handler(Looper.getMainLooper()).post(new Runnable() {
@@ -167,6 +172,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     @Override
                                     public void run() {
                                         Toast.makeText(MainActivity.this, "connect failed!", Toast.LENGTH_SHORT).show();
+                                        EchoClient.destroy();
                                     }
                                 });
                             }

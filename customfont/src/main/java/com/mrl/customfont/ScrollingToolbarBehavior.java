@@ -1,11 +1,14 @@
 package com.mrl.customfont;
 
 import android.content.Context;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.v7.widget.Toolbar;
+
 import android.util.AttributeSet;
 import android.view.View;
+
+import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+
+import com.google.android.material.appbar.AppBarLayout;
 
 /**
  * Created by Thanvandh on 09/07/2016.

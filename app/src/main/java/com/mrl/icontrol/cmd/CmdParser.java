@@ -1,10 +1,10 @@
 package com.mrl.icontrol.cmd;
 
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CmdParser {
 
+    public static final Integer NONE = Integer.MIN_VALUE;
     public static final Integer OFF = 0x00;
     public static final Integer ON = 0x01;
     public static final Integer PAUSE = 0x02;
@@ -26,7 +26,7 @@ public class CmdParser {
     }
 
     public static Integer parse(String input){
-        Integer cmd = 0x00;
+        Integer cmd = NONE;
         if (matches(PATTERN_OFF, input)){
             cmd = OFF;
         }else if(matches(PATTERN_ON, input)){

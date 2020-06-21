@@ -1,4 +1,4 @@
-include ':app'
+include ':app', ':jpython'
 include ':ai'
 include ':network'
 include ':customfont'
